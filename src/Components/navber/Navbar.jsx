@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 
 
 const Navbar = () => {
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar fixed z-10 bg-opacity-80 bg-black text-white font-bold">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -11,10 +12,14 @@ const Navbar = () => {
             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
               <li><a>Item 1</a></li>
               <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
+                <a>Menu</a>
+                <ul className="p-2 text-black ">
+              <Link to='/men'>    <li><a>Men</a></li></Link>
+                 <Link to={'/wom'}> <li><a>Women</a></li></Link>
+                 <Link to='/teen'>    <li><a>Teen</a></li></Link>
+                 <Link to={'/sport'}> <li><a>Sport</a></li></Link>
+                 <Link to='/child'>    <li><a>Child</a></li></Link>
+                 <Link to={'/acs'}> <li><a>Acceceries</a></li></Link>
                 </ul>
               </li>
               <li><a>Item 3</a></li>
@@ -24,13 +29,17 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li><a>Item 1</a></li>
+         <Link to={'/home'}>   <li><a>Home</a></li></Link>
             <li>
               <details>
-                <summary>Parent</summary>
-                <ul className="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
+                <summary>MENU</summary>
+                <ul className="p-2 text-black ">
+              <Link to='/men'>    <li><a>Men</a></li></Link>
+                 <Link to={'/wom'}> <li><a>Women</a></li></Link>
+                 <Link to='/teen'>    <li><a>Teen</a></li></Link>
+                 <Link to={'/sport'}> <li><a>Sport</a></li></Link>
+                 <Link to='/child'>    <li><a>Child</a></li></Link>
+                 <Link to={'/acs'}> <li><a>Acceceries</a></li></Link>
                 </ul>
               </details>
             </li>
