@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-
-
+import { TbLogin2 } from "react-icons/tb";
+import { BiSolidCartAdd } from "react-icons/bi";
 const Navbar = () => {
     return (
-        <div className="navbar fixed z-10 bg-opacity-80 bg-black text-white font-bold">
+        <div className="navbar fixed z-30 bg-opacity-90 bg-black text-white font-bold">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -25,11 +25,15 @@ const Navbar = () => {
               <li><a>Item 3</a></li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+        
+        <div className="flex flex-row justify-center items-center w-[200px]">
+        <img className="h-24 " src="https://i.ibb.co/ypcs3mp/6dcd95192542125-Y3-Jvc-Cwy-NTU2-LDIw-MDAs-Mj-Ix-LDA-removebg-preview.png" alt="" />
+          <a className=" text-2xl text-yellow-600">Xport</a>
+        </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-         <Link to={'/home'}>   <li><a>Home</a></li></Link>
+         <Link to={'/'}>   <li><a>Home</a></li></Link>
             <li>
               <details>
                 <summary>MENU</summary>
@@ -46,8 +50,10 @@ const Navbar = () => {
             <li><a>Item 3</a></li>
           </ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn">Button</a>
+        <div className="navbar-end gap-1">
+       
+          <a className="btn bg-yellow-700 text-white"><TbLogin2 /></a>
+          <a className="btn bg-white text-black"> <BiSolidCartAdd /></a>
         </div>
       </div>
     );

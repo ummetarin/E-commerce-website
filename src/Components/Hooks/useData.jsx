@@ -6,7 +6,7 @@ const useData = () => {
     const[loading,setLoad]=useState(true)
 
     useEffect(() => {
-      fetch('/datadress.json')
+      fetch('http://localhost:5000/dress')
         .then(res => res.json())
         .then(data => {
           setdressData(data); 

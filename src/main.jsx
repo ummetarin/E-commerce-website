@@ -14,6 +14,7 @@ import Teendata from './Components/Teen/Teendata';
 import Acsdata from './Components/Acsdataaa/Acsdata';
 import Childdata from './Components/Child/Childdata';
 import Sportdata from './Components/Sport/Sportdata';
+import DetailsMen from './Components/AllMenu/DetailsMen';
 
 
 
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
     element: <Mainpage></Mainpage>,
     children:[
       {
-        path:'/home',
+        path:'/',
         element:<Homedata></Homedata>
       
       },{
@@ -44,7 +45,11 @@ const router = createBrowserRouter([
       },{
         path:'/sport',
         element:<Sportdata></Sportdata>
-      },
+      },{
+        path:'/mendata/:id',
+        element:<DetailsMen></DetailsMen>,
+        loader: (params) => fetch(`http://localhost:5000/dress/${params?._id}`)
+      }
     ]
   },
 ]);
