@@ -1,21 +1,13 @@
 import { useEffect, useState } from "react";
 import Acscard from "./Acscard";
+import useData from "../Hooks/useData";
 
 
 const Acsdata = () => {
 
-    const [acs, setAcs] = useState([]);
+  const [dressdata,loading] = useData();
+  const acs = dressdata.filter(item =>  item.category === 'Accessories');
 
-    useEffect(() => {
-      fetch('/acs.js')
-        .then(res => res.json())
-        .then(data => {
-          setAcs(data); 
-        })
-        .catch(error => {
-          console.error('Error fetching data:', error);
-        });
-    }, []);
     return (
         <div>
         <div>

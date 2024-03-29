@@ -16,6 +16,7 @@ import Childdata from './Components/Child/Childdata';
 import Sportdata from './Components/Sport/Sportdata';
 
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
       },{
         path:'/sport',
         element:<Sportdata></Sportdata>
-      }
+      },
     ]
   },
 ]);

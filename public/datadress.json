@@ -1,0 +1,222 @@
+[
+    {
+        "id": 1,
+        "name": "Men's Casual Shirt",
+        "image": "https://example.com/mens_casual_shirt.jpg",
+        "category": "Men",
+        "size": "L",
+        "price": 29.99,
+        "discount": 0.1,
+        "other": "100% Cotton",
+        "title": "Classic Men's Casual Shirt"
+    },
+    {
+        "id": 2,
+        "name": "Women's Floral Dress",
+        "image": "https://example.com/womens_floral_dress.jpg",
+        "category": "Women",
+        "size": "M",
+        "price": 39.99,
+        "discount": 0.2,
+        "other": "Polyester Blend",
+        "title": "Elegant Floral Dress for Women"
+    },
+    {
+        "id": 3,
+        "name": "Teen's Graphic T-Shirt",
+        "image": "https://example.com/teens_graphic_tshirt.jpg",
+        "category": "Teen",
+        "size": "S",
+        "price": 14.99,
+        "discount": 0.15,
+        "other": "Soft Cotton Material",
+        "title": "Cool Graphic Tee for Teens"
+    },
+    {
+        "id": 4,
+        "name": "Men's Sports Shorts",
+        "image": "https://example.com/mens_sports_shorts.jpg",
+        "category": "Sport",
+        "size": "XL",
+        "price": 24.99,
+        "discount": 0.1,
+        "other": "Breathable Fabric",
+        "title": "Comfortable Sports Shorts for Men"
+    },
+    {
+        "id": 5,
+        "name": "Women's Yoga Leggings",
+        "image": "https://example.com/womens_yoga_leggings.jpg",
+        "category": "Sport",
+        "size": "S",
+        "price": 34.99,
+        "discount": 0.2,
+        "other": "Stretchy Material",
+        "title": "Flexible Yoga Leggings for Women"
+    },
+    {
+        "id": 6,
+        "name": "Men's Leather Belt",
+        "image": "https://example.com/mens_leather_belt.jpg",
+        "category": "Accessories",
+        "size": "One Size",
+        "price": 19.99,
+        "discount": 0.1,
+        "other": "Genuine Leather",
+        "title": "Classic Leather Belt for Men"
+    },
+    {
+        "id": 7,
+        "name": "Women's Scarf",
+        "image": "https://example.com/womens_scarf.jpg",
+        "category": "Accessories",
+        "size": "One Size",
+        "price": 12.99,
+        "discount": 0.05,
+        "other": "Silk Blend",
+        "title": "Stylish Scarf for Women"
+    },
+    {
+        "id": 8,
+        "name": "Teen's Baseball Cap",
+        "image": "https://example.com/teens_baseball_cap.jpg",
+        "category": "Accessories",
+        "size": "One Size",
+        "price": 9.99,
+        "discount": 0.1,
+        "other": "Adjustable Strap",
+        "title": "Cool Baseball Cap for Teens"
+    },
+    {
+        "id": 9,
+        "name": "Men's Plaid Shirt",
+        "image": "https://example.com/mens_plaid_shirt.jpg",
+        "category": "Men",
+        "size": "M",
+        "price": 34.99,
+        "discount": 0.1,
+        "other": "100% Cotton",
+        "title": "Stylish Plaid Shirt for Men"
+    },
+    {
+        "id": 10,
+        "name": "Women's Denim Jacket",
+        "image": "https://example.com/womens_denim_jacket.jpg",
+        "category": "Women",
+        "size": "L",
+        "price": 49.99,
+        "discount": 0.2,
+        "other": "Classic Denim Fabric",
+        "title": "Trendy Denim Jacket for Women"
+    },
+    {
+        "id": 11,
+        "name": "Teen's Hoodie",
+        "image": "https://example.com/teens_hoodie.jpg",
+        "category": "Teen",
+        "size": "L",
+        "price": 29.99,
+        "discount": 0.15,
+        "other": "Soft Fleece Material",
+        "title": "Cozy Hoodie for Teens"
+    },
+    {
+        "id": 12,
+        "name": "Men's Running Shoes",
+        "image": "https://example.com/mens_running_shoes.jpg",
+        "category": "Sport",
+        "size": "10",
+        "price": 79.99,
+        "discount": 0.1,
+        "other": "Mesh Upper",
+        "title": "Comfortable Running Shoes for Men"
+    },
+    {
+        "id": 13,
+        "name": "Women's Sports Bra",
+        "image": "https://example.com/womens_sports_bra.jpg",
+        "category": "Sport",
+        "size": "M",
+        "price": 24.99,
+        "discount": 0.2,
+        "other": "Moisture-Wicking Fabric",
+        "title": "Supportive Sports Bra for Women"
+    },
+    {
+        "id": 14,
+        "name": "Men's Sunglasses",
+        "image": "https://example.com/mens_sunglasses.jpg",
+        "category": "Accessories",
+        "size": "One Size",
+        "price": 29.99,
+        "discount": 0.1,
+        "other": "UV Protection",
+        "title": "Stylish Sunglasses for Men"
+    },
+    {
+        "id": 15,
+        "name": "Women's Watch",
+        "image": "https://example.com/womens_watch.jpg",
+        "category": "Accessories",
+        "size": "One Size",
+        "price": 59.99,
+        "discount": 0.15,
+        "other": "Quartz Movement",
+        "title": "Elegant Watch for Women"
+    },
+    {
+        "id": 16,
+        "name": "Teen's Denim Jeans",
+        "image": "https://example.com/teens_denim_jeans.jpg",
+        "category": "Teen",
+        "size": "32",
+        "price": 39.99,
+        "discount": 0.1,
+        "other": "Slim Fit",
+        "title": "Stylish Denim Jeans for Teens"
+    },
+    {
+        "id": 17,
+        "name": "Men's Polo Shirt",
+        "image": "https://example.com/mens_polo_shirt.jpg",
+        "category": "Men",
+        "size": "XL",
+        "price": 24.99,
+        "discount": 0.1,
+        "other": "Breathable Cotton",
+        "title": "Classic Polo Shirt for Men"
+    },
+    {
+        "id": 18,
+        "name": "Women's Leather Handbag",
+        "image": "https://example.com/womens_leather_handbag.jpg",
+        "category": "Women",
+        "size": "One Size",
+        "price": 69.99,
+        "discount": 0.2,
+        "other": "Genuine Leather",
+        "title": "Stylish Leather Handbag for Women"
+    },
+    {
+        "id": 19,
+        "name": "Teen's Graphic Hoodie",
+        "image": "https://example.com/teens_graphic_hoodie.jpg",
+        "category": "Teen",
+        "size": "M",
+        "price": 34.99,
+        "discount": 0.15,
+        "other": "Soft Cotton Blend",
+        "title": "Cool Graphic Hoodie for Teens"
+    },
+    {
+        "id": 20,
+        "name": "Men's Dress Shoes",
+        "image": "https://example.com/mens_dress_shoes.jpg",
+        "category": "Men",
+        "size": "11",
+        "price": 59.99,
+        "discount": 0.1,
+        "other": "Genuine Leather",
+        "title": "Elegant Dress Shoes for Men"
+    }
+]

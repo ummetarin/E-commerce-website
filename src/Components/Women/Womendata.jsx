@@ -1,29 +1,20 @@
-import { useEffect, useState } from "react";
-import WomenCard from "./WomenCard";
 
+import WomenCard from "./WomenCard";
+import useData from "../Hooks/useData";
 
 const Womendata = () => {
-    const [wom, setWom] = useState([]);
+  const [dressdata,loading] = useData();
+  const womendata = dressdata.filter(item =>  item.category === 'Women');
+  console.log(womendata);
 
-  useEffect(() => {
-    fetch('/Women.js') 
-      .then(res => res.json())
-      .then(data => {
-        setWom(data);
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []); 
     return (
         <div>
              <div>
-        <img src="example.jpg" alt="Example" /> {/* Provide a valid image source */}
+        <img src="example.jpg" alt="Example" /> 
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 py-12 justify-center items-center mx-auto"> 
-        {wom.map(data => (
-           <WomenCard key={data.id} data={data}></WomenCard>
-           
+        {womendata?.map(data => (
+           <WomenCard key={data?.id} data={data}></WomenCard>
         ))}
       </div> 
         </div>
