@@ -10,9 +10,12 @@ const Sportdata = () => {
     return (
         <div>
         <div>
-   <img src="example.jpg" alt="Example" /> {/* Provide a valid image source */}
+   <img className='w-full' src="https://i.ibb.co/pZsQStH/216994398-116745723998005-2890932197924147188-n.jpg" alt="Example" /> {/* Provide a valid image source */}
  </div>
- <div className="grid md:grid-cols-2 lg:grid-cols-3 justify-center items-center mx-auto"> 
+ <div className="justify-center items-center mx-auto flex">
+        <h1 className="md:text-3xl mt-8 text-center font-medium border-yellow-600 md:w-[550px]  border-b-2 uppercase items-center justify-center">Sport Exclusive Collection</h1>
+      </div>
+      <div className="items-center justify-center grid lg:grid-cols-3 md:grid-cols-2 grid-rows-1 py-16 gap-8  ">
    {sportdata.map(data => (
       <SportCard key={data.id} data={data}></SportCard>
       

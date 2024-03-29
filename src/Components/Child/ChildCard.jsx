@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
 import ImageZoom from "react-image-zooom";
 import 'react-medium-image-zoom/dist/styles.css'
 import { Link } from "react-router-dom";
