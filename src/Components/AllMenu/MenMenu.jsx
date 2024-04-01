@@ -5,7 +5,7 @@ import useData from "../Hooks/useData";
 const MenMenu = () => {
   const [dressdata,loading] = useData();
   const mendata = dressdata.filter(item =>  item.category === 'Men');
-
+  console.log(mendata);
   return (
     <>
       <div>
@@ -16,7 +16,7 @@ const MenMenu = () => {
       </div>
       <div className="items-center justify-center grid lg:grid-cols-3 md:grid-cols-2 grid-rows-1 py-16 gap-8  ">
         {mendata.map(data => (
-           <Mencard key={data.id} data={data}></Mencard>
+           <Mencard key={data.id} dataid={data?._id} data={data}></Mencard>
            
         ))}
       </div>

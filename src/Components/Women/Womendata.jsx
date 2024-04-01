@@ -17,7 +17,7 @@ const Womendata = () => {
       </div>
       <div className="items-center justify-center grid lg:grid-cols-3 md:grid-cols-2 grid-rows-1 py-16 gap-8  ">
         {womendata?.map(data => (
-           <WomenCard key={data?.id} data={data}></WomenCard>
+           <WomenCard key={data?.id} dataid={data?._id} data={data}></WomenCard>
         ))}
       </div> 
         </div>

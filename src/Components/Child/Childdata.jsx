@@ -16,7 +16,7 @@ const Childdata = () => {
       </div>
       <div className="items-center justify-center grid lg:grid-cols-3 md:grid-cols-2 grid-rows-1 py-16 gap-8  "> 
    {Childdata.map(data => (
-      <ChildCard key={data.id} data={data}></ChildCard>
+      <ChildCard key={data.id} dataid={data?._id} data={data}></ChildCard>
       
    ))}
  </div> 

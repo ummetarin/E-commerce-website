@@ -3,9 +3,14 @@ import { BiSolidCartAdd } from "react-icons/bi";
 
 import ImageZoom from "react-image-zooom";
 import 'react-medium-image-zoom/dist/styles.css'
-import { Link } from "react-router-dom";
-const Mencard = ({data}) => {
-   console.log(data);
+import { Link, useParams } from "react-router-dom";
+const Mencard = ({data,dataid}) => {
+
+    const handleaddcart=()={
+
+    }
+
+
     return (
         <div>
         <div>
@@ -20,8 +25,8 @@ const Mencard = ({data}) => {
       <div className="text-lg font-semibold  ">${data?.price}</div>
   </div>
   <div className="flex gap-4">
-      <button className="px-12 py-2 bg-slate-800 text-white rounded-lg font-semibold md:text-base sm:text-sm text-[12px] hover:bg-slate-950"><BiSolidCartAdd /></button>
-         <Link  to={`/mendata/${data?._id}`}> <button className="px-4 py-2 bg-white hover:bg-gray-800 hover:text-white border-black border duration-300 rounded-md">View Details</button></Link>
+      <button onClick={handleaddcart} className="px-12 py-2 bg-slate-800 text-white rounded-lg font-semibold md:text-base sm:text-sm text-[12px] hover:bg-slate-950"><BiSolidCartAdd /></button>
+         <Link to={`/detail/${dataid}`}> <button className="px-4 py-2 bg-white hover:bg-gray-800 hover:text-white border-black border duration-300 rounded-md">View Details</button></Link>
   </div>
 </div>  
 </div>   

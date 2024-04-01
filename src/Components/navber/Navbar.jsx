@@ -1,7 +1,25 @@
 import { Link } from "react-router-dom";
 import { TbLogin2 } from "react-icons/tb";
 import { BiSolidCartAdd } from "react-icons/bi";
+import { useContext } from "react";
+import { AuthContext } from "../Security/AuthProvider";
+import Swal from "sweetalert2";
 const Navbar = () => {
+  const{user,logOut}=useContext(AuthContext)
+
+  const handlelogout=()=>{
+    logOut()
+    .then(()=>{
+      Swal.fire({
+        position: "top-middle",
+        icon: "success",
+        title: "Loged Out!!!!",
+        showConfirmButton: false,
+        timer: 1500
+      });
+    })
+    .catch(error=>console.log(error))
+  }
     return (
         <div className="navbar fixed z-30 bg-opacity-90 bg-black text-white font-bold">
         <div className="navbar-start">
@@ -22,13 +40,13 @@ const Navbar = () => {
                  <Link to={'/acs'}> <li><a>Acceceries</a></li></Link>
                 </ul>
               </li>
-              <li><a>Item 3</a></li>
+             <Link to={'/res'}> <li><a>Register</a></li></Link>
             </ul>
           </div>
         
-        <div className="flex flex-row justify-center items-center w-[200px]">
-        <img className="h-24 " src="https://i.ibb.co/ypcs3mp/6dcd95192542125-Y3-Jvc-Cwy-NTU2-LDIw-MDAs-Mj-Ix-LDA-removebg-preview.png" alt="" />
-          <a className=" text-2xl text-yellow-600">Xport</a>
+        <div className="flex flex-row justify-center items-center md:w-[200px]">
+        <img className="md:h-24 h-12 " src="https://i.ibb.co/ypcs3mp/6dcd95192542125-Y3-Jvc-Cwy-NTU2-LDIw-MDAs-Mj-Ix-LDA-removebg-preview.png" alt="" />
+          <a className=" md:text-2xl text-xl text-yellow-600">Xport</a>
         </div>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -47,13 +65,15 @@ const Navbar = () => {
                 </ul>
               </details>
             </li>
-            <li><a>Item 3</a></li>
+            <Link to={'/res'}> <li><a>Register</a></li></Link>
           </ul>
         </div>
         <div className="navbar-end gap-1">
        
-          <a className="btn bg-yellow-700 text-white"><TbLogin2 /></a>
-          <a className="btn bg-white text-black"> <BiSolidCartAdd /></a>
+       {
+        user ?<><img onClick={handlelogout} className="h-12" src="https://i.ibb.co/pLPR3DK/pngtree-vector-logout-icon-png-image-1022628-removebg-preview.png" alt="" ></img><img src={user?.photoURL} alt="" /></>:<> <Link to={'/log'}>  <a className="btn bg-yellow-700 text-white"><TbLogin2 /></a></Link></>
+       }
+          <a className=" "> <img className="h-12" src="https://i.ibb.co/rmh2m78/images-1-removebg-preview.png" alt="" /></a>
         </div>
       </div>
     );

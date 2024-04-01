@@ -14,7 +14,12 @@ import Teendata from './Components/Teen/Teendata';
 import Acsdata from './Components/Acsdataaa/Acsdata';
 import Childdata from './Components/Child/Childdata';
 import Sportdata from './Components/Sport/Sportdata';
-import DetailsMen from './Components/AllMenu/DetailsMen';
+import Details from './Components/Details/Details';
+import AuthProvider from './Components/Security/AuthProvider';
+import Login from './Components/Security/Login';
+import Register from './Components/Security/Register';
+import PrivateRoute from './Components/Security/PrivateRoute';
+
 
 
 
@@ -46,9 +51,15 @@ const router = createBrowserRouter([
         path:'/sport',
         element:<Sportdata></Sportdata>
       },{
-        path:'/mendata/:id',
-        element:<DetailsMen></DetailsMen>,
-        loader: (params) => fetch(`http://localhost:5000/dress/${params?._id}`)
+        path:'/detail/:id',
+        element:<PrivateRoute><Details></Details></PrivateRoute>,
+        loader:({params})=>fetch(`http://localhost:5000/dress/${params.id}`)
+      },{
+        path:'/log',
+        element:<Login></Login>
+      },{
+        path:'/res',
+        element:<Register></Register>
       }
     ]
   },
@@ -56,6 +67,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+ <AuthProvider>
+ <RouterProvider router={router} />
+ </AuthProvider>
   </React.StrictMode>,
 )

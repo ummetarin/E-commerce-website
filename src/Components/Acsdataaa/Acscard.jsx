@@ -4,7 +4,7 @@ import ImageZoom from "react-image-zooom";
 import 'react-medium-image-zoom/dist/styles.css'
 import { Link } from "react-router-dom";
 
-const Acscard = ({data}) => {
+const Acscard = ({data,dataid}) => {
     return (
       <div>
         <div>
@@ -21,7 +21,7 @@ const Acscard = ({data}) => {
   </div>
   <div className="flex gap-4">
       <button className="px-6 py-2 bg-slate-800 text-white rounded-lg font-semibold md:text-base sm:text-sm text-[12px] hover:bg-slate-950">Add to Cart</button>
-         <Link > <button className="px-4 py-2 bg-white hover:bg-gray-800 hover:text-white border-black border duration-300 rounded-md">View Details</button></Link>
+         <Link to={`/detail/${dataid}`} > <button className="px-4 py-2 bg-white hover:bg-gray-800 hover:text-white border-black border duration-300 rounded-md">View Details</button></Link>
   </div>
 </div>  
 </div>   
