@@ -6,6 +6,9 @@ import Swal from "sweetalert2";
 export const Login = () => {
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
+    
+    const location=useLocation()
+    const from=location.state?.from?.pathname || "/";
 
     const handlelog = e => {
         e.preventDefault();

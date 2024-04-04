@@ -5,7 +5,7 @@ import useData from "../Hooks/useData";
 const MenMenu = () => {
   const [dressdata,loading] = useData();
   const mendata = dressdata.filter(item =>  item.category === 'Men');
-  console.log(mendata);
+  // console.log(mendata);
   return (
     <>
       <div>
