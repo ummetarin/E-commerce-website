@@ -3,12 +3,14 @@ import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Security/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
+import useCarts from "../Hook/useCarts";
 
 
 const Details = () => {
     const spdata=useLoaderData();
     // console.log(spdata);
 
+    const [,refetch]=useCarts()
     const currentDateAndTime = new Date();
     const date = `${currentDateAndTime.getDate()}-${currentDateAndTime.getMonth() + 1}-${currentDateAndTime.getFullYear()} `;
     const time=`${currentDateAndTime.getHours()}:${currentDateAndTime.getMinutes()}:${currentDateAndTime.getSeconds()}`
@@ -17,6 +19,9 @@ const Details = () => {
     const{name,price,description,image,size}=spdata;
     const navigate=useNavigate()
     const [selectedSize, setSelectedSize] = useState('');
+
+    const[selstar,Setstar]=useState('')
+    // addcartwork 
       const handleaddcart=food=>{
         if(user && user?.email){
            const carditem ={
@@ -33,6 +38,7 @@ const Details = () => {
               showConfirmButton: false,
               timer: 1500
             });
+            refetch()
            })
         }
         else{
@@ -123,7 +129,7 @@ const Details = () => {
          <form  className="flex flex-col gap-4 font-bold ">
             <input type="text" placeholder="Name" name="name" className="bg-base-100 placeholder-black pl-3 text-black border-x-2 border-y-2 border-yellow-600 rounded-lg md:w-[400px] h-[44px]" ></input>
             <input type="email" placeholder="Email" name="email" className="bg-base-100 placeholder-black pl-3 text-black border-x-2 border-y-2 border-yellow-600 rounded-lg md:w-[400px] h-[44px]" ></input>
-            <select name="star" type="text"  className="select select-bordered w-[400px] h-[44px]">
+            <select name="star" value={Setstar} type="text"  className="select select-bordered w-[400px] h-[44px]">
               <option disabled selected>1</option>
               <option>2</option>
               <option>3</option>

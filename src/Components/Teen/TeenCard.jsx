@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Security/AuthProvider";
 import { BiSolidCartAdd } from "react-icons/bi";
+import useCarts from "../Hook/useCarts";
 const TeenCard = ({data,dataid}) => {
 
     const currentDateAndTime = new Date();
@@ -15,6 +16,7 @@ const TeenCard = ({data,dataid}) => {
     const time=`${currentDateAndTime.getHours()}:${currentDateAndTime.getMinutes()}:${currentDateAndTime.getSeconds()}`
   
     const{user}=useContext(AuthContext);
+    const[,refetch]=useCarts()
     const{name,price,description,image,size}=data;
     const navigate=useNavigate()
     const [selectedSize, setSelectedSize] = useState('');
@@ -35,6 +37,7 @@ const TeenCard = ({data,dataid}) => {
                 showConfirmButton: false,
                 timer: 1500
               });
+              refetch()
            })
         }
         else{

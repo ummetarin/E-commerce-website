@@ -7,6 +7,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../Security/AuthProvider";
 import Swal from "sweetalert2";
 import axios from "axios";
+import useCarts from "../Hook/useCarts";
 const Mencard = ({data,dataid}) => {
   const currentDateAndTime = new Date();
   const date = `${currentDateAndTime.getDate()}-${currentDateAndTime.getMonth() + 1}-${currentDateAndTime.getFullYear()} `;
@@ -15,6 +16,7 @@ const Mencard = ({data,dataid}) => {
   const{user}=useContext(AuthContext);
   const{name,price,description,image,size}=data;
   const navigate=useNavigate()
+  const[,refetch]=useCarts()
   const [selectedSize, setSelectedSize] = useState('');
     const handleaddcart=food=>{
       if(user && user?.email){
@@ -32,6 +34,7 @@ const Mencard = ({data,dataid}) => {
             showConfirmButton: false,
             timer: 1500
           });
+          refetch()
          })
       }
       else{

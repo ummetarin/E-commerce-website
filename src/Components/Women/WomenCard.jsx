@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Security/AuthProvider";
 import { BiSolidCartAdd } from "react-icons/bi";
+import useCarts from "../Hook/useCarts";
 const WomenCard = ({data,dataid}) => {
 
   const currentDateAndTime = new Date();
@@ -17,6 +18,7 @@ const WomenCard = ({data,dataid}) => {
   const{user}=useContext(AuthContext);
   const{name,price,description,image,size}=data;
   const navigate=useNavigate()
+  const[,refetch]=useCarts()
   const [selectedSize, setSelectedSize] = useState('');
     const handleaddcart=food=>{
       if(user && user?.email){
@@ -35,6 +37,7 @@ const WomenCard = ({data,dataid}) => {
             showConfirmButton: false,
             timer: 1500
           });
+          refetch()
          })
       }
       else{
