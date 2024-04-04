@@ -4,11 +4,13 @@ import { AuthContext } from "../Security/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
 import useCarts from "../Hook/useCarts";
+import AllReviews from "./AllReviews";
 
 
 const Details = () => {
     const spdata=useLoaderData();
-    // console.log(spdata);
+
+
 
     const [,refetch]=useCarts()
     const currentDateAndTime = new Date();
@@ -56,13 +58,55 @@ const Details = () => {
             }
           });
         }
-  
-
-
-
-  
 }
 
+// review
+const handlereview = (e, id) => {
+  e.preventDefault(); 
+  const name = e.target.name.value;
+  const email = e.target.email.value;
+  const review = e.target.review.value;
+  const star = selstar;
+  if (user && user.email) {
+      const reviewdata = {
+        id,
+          name,
+          email,
+          star,
+          date,
+          time,
+          review
+      }
+    
+      axios.post('http://localhost:5000/reviews',reviewdata)
+      .then(res=>{
+       Swal.fire({
+         position: "top-center",
+         icon: "success",
+         title: "Review Done",
+         showConfirmButton: false,
+         timer: 1500
+       });
+       refetch()
+      })
+     
+  }
+  else{
+    Swal.fire({
+      title: "You are not Logged in",
+      text: "Please Login for add to card!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+       navigate('/log',{state:{from:location}})
+      }
+    });
+  }
+}
 
 
     return (
@@ -126,19 +170,21 @@ const Details = () => {
 
        <div className="flex md:flex-row flex-col justify-center items-center pb-12 gap-36">
 
-         <form  className="flex flex-col gap-4 font-bold ">
-            <input type="text" placeholder="Name" name="name" className="bg-base-100 placeholder-black pl-3 text-black border-x-2 border-y-2 border-yellow-600 rounded-lg md:w-[400px] h-[44px]" ></input>
-            <input type="email" placeholder="Email" name="email" className="bg-base-100 placeholder-black pl-3 text-black border-x-2 border-y-2 border-yellow-600 rounded-lg md:w-[400px] h-[44px]" ></input>
-            <select name="star" value={Setstar} type="text"  className="select select-bordered w-[400px] h-[44px]">
-              <option disabled selected>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-          </select>
+       <form onSubmit={(e) => handlereview(e, spdata?._id)} className="flex flex-col gap-4 font-bold">
+    <input type="text" placeholder="Name" name="name" className="bg-base-100 placeholder-black pl-3 text-black border-x-2 border-y-2 border-yellow-600 rounded-lg md:w-[400px] h-[44px]" />
+    <input type="email" placeholder="Email" name="email" className="bg-base-100 placeholder-black pl-3 text-black border-x-2 border-y-2 border-yellow-600 rounded-lg md:w-[400px] h-[44px]" />
+    <select onChange={(e) => Setstar(e.target.value)} value={selstar} name="star" className="select select-bordered w-[400px] h-[44px]">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+
+
             <input type="text" placeholder="Review" name="review" className="bg-base-100 placeholder-black pl-3 text-black border-x-2 border-y-2 border-yellow-600 rounded-lg md:w-[400px] h-[130px]"></input>
 
-            <button className="btn bg-stone-800 text-white">Give Review</button>
+            <button type="submit" className="btn bg-stone-800 text-white">Give Review</button>
          </form>
          <img className="w-[300px]" src="https://i.ibb.co/hLGJN97/review-the-results-of-your-a-b-split-test.jpg" alt="" />
 
@@ -154,22 +200,7 @@ const Details = () => {
            
          
 
-         <div className="flex flex-row items-center gap-16">
-         <div className="pt-8  flex flex-row justify-start gap-5 items-center ml-12">
-            <img src="https://i.ibb.co/jMwfy6J/review.jpg" className="w-[40px] rounded-lg h-[40px]" alt="" />
-            <h1>User NAme</h1>
-           </div>
-           <div className="pt-7">
-            <img className="h-6" src="https://i.ibb.co/qMvrKvy/images-2-removebg-preview.png" alt="" />
-           </div>
-         </div>
-          
-           <div className="flex flex-row items-center ml-7 py-2">
-            <img className="h-[44px]" src="https://i.ibb.co/7kn7Mqb/kisspng-computer-icons-quotation-mark-west-end-tire-comma-quote-marks-5b32ef9557da39-710920021530064.pnghttps://i.ibb.co/7kn7Mqb/kisspng-computer-icons-quotation-mark-west-end-tire-comma-quote-marks-5b32ef9557da39-710920021530064.png" alt="" />
-            <h1 className="text-xl font-bold ">review</h1>
-            <img className="h-[36px]" src="https://i.ibb.co/jwMWNh0/png-transparent-computer-icons-comma-quotation-mark-inverted-miscellaneous-angle-text-removebg-previ.png" alt="" />
-           </div>
-       
+         <AllReviews revid={spdata?._id}></AllReviews>
 
 
 
