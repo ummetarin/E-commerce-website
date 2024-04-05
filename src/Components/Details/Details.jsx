@@ -66,7 +66,7 @@ const handlereview = (e, id) => {
   const name = e.target.name.value;
   const email = e.target.email.value;
   const review = e.target.review.value;
-  const star = selstar;
+  const star = parseInt(selstar);
   if (user && user.email) {
       const reviewdata = {
         id,
@@ -142,13 +142,7 @@ const handlereview = (e, id) => {
                                   </select>
                               </div>
 
-                {/* <div className="flex items-center gap-3 mt-2 pt-2 pb-3" id="size">
-                                    <select name="size" className="select select-bordered w-[200px] h-[44px]">
-                                        {spdata?.size.map((size, index) => (
-                                            <option key={index} value={size}>{size}</option>
-                                        ))}
-                                    </select>
-                                </div> */}
+                
                 <div className="flex items-center mt-4">
                 <Link><button  onClick={()=>handleaddcart(spdata)} className="bg-gray-900 text-white px-6 py-2 w-full rounded-lg font-semibold md:text-base sm:text-sm text-[12px] hover:bg-slate-900">Add to Cart</button></Link>
             </div>

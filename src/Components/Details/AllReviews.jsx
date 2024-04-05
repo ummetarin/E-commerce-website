@@ -13,12 +13,25 @@ const AllReviews = ({ revid }) => {
         }
     });
 
+    const handlerefresh=()=>{
+        refetch()
+    }
+
     return (
-        <div>
+       <>
+      
+       
+       <div className="grid grid-cols-1 md:grid-cols-2 px-24 pb-6 pt-8 gap-4 justify-center items-center mx-auto">
             {reviewdata?.map(data => (
                 <Review key={data?.revid} data={data} refetch={refetch}></Review>
             ))}
         </div>
+
+        <div className="justify-center flex pt-2 pb-24">
+        <button className="btn  bg-slate-700 text-white" onClick={handlerefresh} >Refresh Reviews</button>
+       </div>
+       
+       </>
     );
 };
 
