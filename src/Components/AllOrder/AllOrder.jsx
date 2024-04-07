@@ -9,25 +9,25 @@ const AllOrder = () => {
           <div className="flex flex-row justify-around md:px-6 ">
       <h1 className=" py-5 text-orange-900 font-bold "  >My order : {allcarddata?.length}</h1>
       </div>
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto md:w-full sm:w-[400px] w-[300px]">
         <table className="table">
           {/* head */}
           <thead>
-            <tr>
+            <tr className="bg-gray-500 h-[40px] text-black  font-bold">
              
               <th>Name</th>
-              <th>image</th>
+              <th>Image</th>
               <th>Price</th>
               <th>Size</th>
               <th>Date</th>
               <th>Delete</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="text-sm">
             {/* row 1 */}
            {
             allcarddata?.map(item=>(
-                <tr key={item?.id}>
+                <tr className="bg-gray-100  border-r-4 border-black" key={item?.id}>
                 <td>
                    {item?.name}
                 </td>

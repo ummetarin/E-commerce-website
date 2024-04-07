@@ -26,6 +26,8 @@ import DashBoard from "./Components/DashBoard/DashBoard";
 import Myorders from "./Components/Mycart/Myorders";
 import MyReviews from "./Components/Mycart/MyReviews";
 import AllOrder from "./Components/AllOrder/AllOrder";
+import AllReviews from "./Components/AllOrder/AllReviews";
+import AddCart from "./Components/AddCart/AddCart";
 
 const queryClient = new QueryClient();
 
@@ -97,6 +99,13 @@ const router = createBrowserRouter([
       },{
         path:'/dash/allorder',
         element:<AllOrder></AllOrder>
+      },{
+        path:'/dash/allrev',
+        element:<AllReviews></AllReviews>
+      },{
+        path:'/dash/add',
+        element:<AddCart></AddCart>
+    
       }
     ]
   }

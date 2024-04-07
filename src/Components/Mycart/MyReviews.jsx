@@ -14,10 +14,11 @@ const MyReviews = () => {
         <table className="table">
           {/* head */}
           <thead>
-            <tr>
+            <tr  className="bg-gray-500 h-[40px] text-black  font-bold">
              
               <th>Name</th>
               <th>Price</th>
+              <th>Review</th>
               <th>Date</th>
               <th>Delete</th>
             </tr>
@@ -26,7 +27,7 @@ const MyReviews = () => {
             {/* row 1 */}
            {
             revdata?.map(item=>(
-                <tr key={item?.id}>
+                <tr className="bg-gray-100  border-r-4 border-black" key={item?.id}>
                 <td>
                    {item?.name}
                 </td>
@@ -35,6 +36,11 @@ const MyReviews = () => {
                   <div>
                     <p>${item?.email}</p>
                   </div>
+                 </td>
+                 <td>
+                <div>
+                    <p>{item?.review}</p>
+                </div>
                  </td>
                  <td>
                 <div>

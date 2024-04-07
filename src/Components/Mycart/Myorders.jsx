@@ -14,8 +14,8 @@ const Myorders = () => {
         <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
-          <thead>
-            <tr>
+          <thead >
+            <tr className="bg-gray-500 h-[40px] text-black  font-bold">
              
               <th>Name</th>
               <th>image</th>
@@ -28,7 +28,7 @@ const Myorders = () => {
             {/* row 1 */}
            {
             cartdata?.map(item=>(
-                <tr key={item?.id}>
+                <tr className="bg-gray-100  border-r-4 border-black" key={item?.id}>
                 <td>
                    {item?.name}
                 </td>
