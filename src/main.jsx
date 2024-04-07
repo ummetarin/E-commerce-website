@@ -1,9 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import {
-  useQuery,
-  useMutation,
-  useQueryClient,
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
@@ -28,6 +25,7 @@ import MyReviews from "./Components/Mycart/MyReviews";
 import AllOrder from "./Components/AllOrder/AllOrder";
 import AllReviews from "./Components/AllOrder/AllReviews";
 import AddCart from "./Components/AddCart/AddCart";
+import Allitems from "./Components/Allitems/Allitems";
 
 const queryClient = new QueryClient();
 
@@ -105,7 +103,10 @@ const router = createBrowserRouter([
       },{
         path:'/dash/add',
         element:<AddCart></AddCart>
-    
+      },{
+        path:'/dash/allitem',
+        element:<Allitems></Allitems>
+
       }
     ]
   }

@@ -6,6 +6,7 @@ import { FaUserPlus } from "react-icons/fa";
 import { BiSolidCartAlt } from "react-icons/bi";
 import { MdRateReview } from "react-icons/md";
 import { MdOutlineAddCircle } from "react-icons/md";
+import { FaPersonHalfDress } from "react-icons/fa6";
 
 const DashBoard = () => {
     return (
@@ -23,6 +24,7 @@ const DashBoard = () => {
                 <Link to={'/dash/allorder'}> <p className="flex gap-2 md:flex-row flex-col  text-sm items-center ml-6 py-2 "><BiSolidCartAlt  className="md:text-2xl text-orange-600"/>All Orders</p></Link>   
                     <Link to={'/dash/allrev'}><p className="flex gap-2 md:flex-row flex-col  text-sm items-center ml-6 py-2 "><MdRateReview  className="md:text-2xl text-orange-600" />All reviews</p></Link>
                   <Link to={'/dash/add'}>  <p className="flex gap-2 items-center md:flex-row flex-col  text-sm  ml-6 py-2 "><MdOutlineAddCircle  className="md:text-2xl text-orange-600" />Add Items</p></Link>
+                  <Link to={'/dash/allitem'}>  <p className="flex gap-2 items-center md:flex-row flex-col  text-sm  ml-6 py-2 "><FaPersonHalfDress className="md:text-2xl text-orange-600" />ALL Items</p></Link>
                 </div>
              
               

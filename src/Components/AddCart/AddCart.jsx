@@ -1,14 +1,50 @@
-
+import axios from "axios";
 
 
 const AddCart = () => {
-    
+
+    const handleallitems=e=>{
+        e.preventDefault()
+        const form=e.target;
+        const name=form.name.value;
+        const price=form.price.value;
+        const discount=form.price.value;
+        const type=form.type.value;
+        const title=form.title.value;
+        const category=form.title.value;
+        const size=form.size.value;
+        const quantity=form.quantity.value;
+        const description=form.description.value;
+
+        const alldatainfo={
+            name,price,discount,type,title,category,size,quantity,description
+        }
+
+        // axios.post('http://localhost:5000/reviews',reviewdata)
+        //         .then(res=>{
+        //          Swal.fire({
+        //            position: "top-center",
+        //            icon: "success",
+        //            title: "Added Successfully",
+        //            showConfirmButton: false,
+        //            timer: 1500
+        //          });
+        //          refetch()
+        //         })
+
+
+
+        
+
+
+    }
+
     return (
         <div className="py-6">
        <div className="flex flex-col justify-center items-center  ">
   <div className="w-full md:w-[800px] bg-orange-200 text-black rounded-lg shadow-md p-6">
     <h2 className="text-2xl font-bold text-center  mb-4">ADD ITEMS</h2>
-    <form className="flex flex-col">
+    <form onSubmit={handleallitems} className="flex flex-col">
       <div className="flex space-x-4 mb-4">
         <input placeholder="Name" name="name" className=" border-0 rounded-md p-2 w-1/2  focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" type="text" />
         <input placeholder="Price" name="price" className=" border-0 rounded-md p-2 w-1/2  focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" type="text" />
