@@ -6,10 +6,8 @@ const Review = ({ data }) => {
 
   return (
     <div>
-      
-
       <div className=" ">
-              <div className="md:h-[200px] h-[220px] w-[300px] md:w-[500px] p-8 rounded shadow-[0px_4px_12px_rgba(0,0,0,0.1)]">
+              <div className="md:h-[200px] h-[230px] w-[300px] md:w-[500px] p-8 rounded shadow-[0px_4px_12px_rgba(0,0,0,0.1)]">
               <div className="flex flex-row justify-between ">
               <div>
               <svg
@@ -36,6 +34,7 @@ const Review = ({ data }) => {
                   ))}
                 </div>
               </div>
+            
                 <a className="inline-flex items-center">
                   <img
                     className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"
@@ -51,6 +50,12 @@ const Review = ({ data }) => {
                     </span>
                   </span>
                 </a>
+
+                <div className="flex-row justify-between flex">
+                <p className="text-sm py-1 ">Date: {data?.date}</p>
+             <p className="text-sm py-1 ">{data?.time}</p>
+
+              </div>
               </div>
             </div>
     </div>

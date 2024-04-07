@@ -192,10 +192,10 @@ const Navbar = () => {
         )}
         {/* <a className=" "> <img className="h-12" src="https://i.ibb.co/rmh2m78/images-1-removebg-preview.png" alt="" /></a> */}
 
-        <button className="btn items-center flex justify-center">
+      <Link to={'/dash'}>  <button className="btn items-center flex justify-center">
         <FaCartArrowDown className="text-2xl" />
           <div className=" rounded-lg font-bold text-red-600 text-sm ">+{cartdata?.length}</div>
-        </button>
+        </button></Link>
       </div>
     </div>
   );

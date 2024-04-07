@@ -22,6 +22,10 @@ import AuthProvider from "./Components/Security/AuthProvider";
 import Login from "./Components/Security/Login";
 import Register from "./Components/Security/Register";
 import PrivateRoute from "./Components/Security/PrivateRoute";
+import DashBoard from "./Components/DashBoard/DashBoard";
+import Myorders from "./Components/Mycart/Myorders";
+import MyReviews from "./Components/Mycart/MyReviews";
+import AllOrder from "./Components/AllOrder/AllOrder";
 
 const queryClient = new QueryClient();
 
@@ -77,7 +81,25 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
     ],
+  
+
   },
+  {
+    path:'/dash',
+    element:<DashBoard></DashBoard>,
+    children:[
+      {
+        path:'/dash/ord',
+        element:<Myorders></Myorders>
+      },{
+        path:'/dash/rev',
+        element:<MyReviews></MyReviews>
+      },{
+        path:'/dash/allorder',
+        element:<AllOrder></AllOrder>
+      }
+    ]
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
