@@ -171,13 +171,14 @@ const Navbar = () => {
       <div className="navbar-end gap-1">
         {user ? (
           <>
+           <img className="h-12 w-12 rounded-full" src={user?.photoURL} alt="" />
             <img
               onClick={handlelogout}
-              className="h-12"
+              className="h-12 w-12"
               src="https://i.ibb.co/pLPR3DK/pngtree-vector-logout-icon-png-image-1022628-removebg-preview.png"
               alt=""
             ></img>
-            <img src={user?.photoURL} alt="" />
+           
           </>
         ) : (
           <>

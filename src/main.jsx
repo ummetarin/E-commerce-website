@@ -26,6 +26,7 @@ import AllOrder from "./Components/AllOrder/AllOrder";
 import AllReviews from "./Components/AllOrder/AllReviews";
 import AddCart from "./Components/AddCart/AddCart";
 import Allitems from "./Components/Allitems/Allitems";
+import AllUser from "./Components/AllOrder/AllUser";
 
 const queryClient = new QueryClient();
 
@@ -107,6 +108,9 @@ const router = createBrowserRouter([
         path:'/dash/allitem',
         element:<Allitems></Allitems>
 
+      },{
+        path:'/dash/alluser',
+        element:<AllUser></AllUser>
       }
     ]
   }

@@ -1,9 +1,14 @@
 import axios from "axios";
+import { useState } from "react";
+import Swal from 'sweetalert2/dist/sweetalert2.js'
 
 
 const AddCart = () => {
+  
+  const [showName,setShowName] = useState({})
 
     const handleallitems=e=>{
+      
         e.preventDefault()
         const form=e.target;
         const name=form.name.value;
@@ -11,26 +16,27 @@ const AddCart = () => {
         const discount=form.price.value;
         const type=form.type.value;
         const title=form.title.value;
-        const category=form.title.value;
-        const size=form.size.value;
+        const category=form.category.value;
         const quantity=form.quantity.value;
         const description=form.description.value;
+        const image=form.image.value;
+        const size = form.size.value.split(',');
 
         const alldatainfo={
-            name,price,discount,type,title,category,size,quantity,description
+            name,price,discount,type,title,category,size,quantity,description,image
         }
-
-        // axios.post('http://localhost:5000/reviews',reviewdata)
-        //         .then(res=>{
-        //          Swal.fire({
-        //            position: "top-center",
-        //            icon: "success",
-        //            title: "Added Successfully",
-        //            showConfirmButton: false,
-        //            timer: 1500
-        //          });
-        //          refetch()
-        //         })
+ 
+        console.log(alldatainfo);
+        axios.post('http://localhost:5000/dress',alldatainfo)
+                .then(res=>{
+                 Swal.fire({
+                   position: "top-center",
+                   icon: "success",
+                   title: "Added Successfully",
+                   showConfirmButton: false,
+                   timer: 1500
+                 });
+                })
 
 
 
@@ -54,29 +60,26 @@ const AddCart = () => {
       <input placeholder="Discount" name="discount" className=" border-0 rounded-md p-2 mb-4  focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" type="text" />
       <div className="flex space-x-4 mb-4">
         <input placeholder="Quantity" name="quantity" className=" border-0 rounded-md p-2 w-1/2  focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" type="text" />
-        <input placeholder="Type" name="title" className=" border-0 rounded-md p-2 w-1/2 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" type="text" />
+        <input placeholder="Type" name="type" className=" border-0 rounded-md p-2 w-1/2 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" type="text" />
       </div>
       
-      <label className="text-sm mb-2 font-bold cursor-pointer" htmlFor="gender">
-        Size
-      </label>
-      <select name="size" className=" border-0 rounded-md p-2 mb-4  focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" id="gender">
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
-      </select>
-      <label className="text-sm mb-2 font-bold cursor-pointer" htmlFor="gender">
-        Categories
-      </label>
-      <select name="category" className=" border-0 rounded-md p-2 mb-4  focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" id="gender">
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
-      </select>
+
+  <div className="pb-5">
+  <input type="text" name="size" placeholder="Size" className="w-full border-0 rounded-md p-2  focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"   />
+  </div>
+  <select name="category" className=" border-0 rounded-md p-2 mb-4  focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" id="gender">
+    <option value="male">Men</option>
+    <option value="female">Women</option>
+    <option value="other">Teen</option>
+    <option value="female">Sport</option>
+    <option value="other">Child</option>
+    <option value="other">Acceceries</option>
+  </select>
+  
+
+      <div>
+        <input type="text" name="image" placeholder="PhotoURL" className=" border-0 rounded-md p-2 mb-4 w-full  focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" />
+      </div>
      
       
       <button className="bg-red-400 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-indigo-600 hover:to-blue-600 transition ease-in-out duration-150" type="submit">
