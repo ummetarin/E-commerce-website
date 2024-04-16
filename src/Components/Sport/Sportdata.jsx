@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import SportCard from './SportCard';
-import useData from '../Hooks/useData';
+import useAllitems from '../Hook/useAllitems';
 
 const Sportdata = () => {
-  const [dressdata,loading] = useData();
-  const sportdata = dressdata.filter(item =>  item.category === 'Sport');
+
+  const[alldress,refetch]=useAllitems()
+  const[size6,setSize6]=useState(6)
+  const sportdata = alldress.filter(item =>  item.category === 'Sport');
 
 
     return (
@@ -16,11 +18,18 @@ const Sportdata = () => {
         <h1 className="md:text-3xl mt-8 text-center font-medium border-yellow-600 md:w-[550px]  border-b-2 uppercase items-center justify-center">Sport Exclusive Collection</h1>
       </div>
       <div className="items-center justify-center grid lg:grid-cols-3 md:grid-cols-2 grid-rows-1 py-16 gap-8  ">
-   {sportdata.map(data => (
+   {sportdata.slice(0,size6).map(data => (
       <SportCard key={data.id} data={data} dataid={data?._id}></SportCard>
       
    ))}
  </div> 
+ {
+  size6<sportdata.length && (
+    <div className='justify-center pt-12 flex'>
+    <button className="btn bg-gray-600 text-white" onClick={() => setSize6(sportdata.length)}>Show All</button>
+  </div>
+  )
+ }
    </div>
     );
 };

@@ -14,6 +14,7 @@ const Mencard = ({data,dataid}) => {
   const time=`${currentDateAndTime.getHours()}:${currentDateAndTime.getMinutes()}:${currentDateAndTime.getSeconds()}`
 
   const{user}=useContext(AuthContext);
+
   const{name,price,description,image,size}=data;
   const navigate=useNavigate()
   const[,refetch]=useCarts()
@@ -22,7 +23,7 @@ const Mencard = ({data,dataid}) => {
       if(user && user?.email){
          const carditem ={
           dataid,
-          name,image,price,description,size,email:user?.email, size: selectedSize,date:date,time:time
+          name,image,price,description,email:user?.email, size: selectedSize,date:date,time:time
          }
 
          axios.post('http://localhost:5000/addcard',carditem)
@@ -88,6 +89,9 @@ const Mencard = ({data,dataid}) => {
   </div>
 </div>  
 </div>   
+
+
+
   </div>
     );
 };

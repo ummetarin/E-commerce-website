@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import TeenCard from "./TeenCard";
 import useData from "../Hooks/useData";
+import useAllitems from "../Hook/useAllitems";
 
 
 const Teendata = () => {
   const [dressdata,loading] = useData();
-  const teendata = dressdata.filter(item =>  item.category === 'Teen');
+  const[size6,setSize6]=useState(6)
+  const[alldress,refetch]=useAllitems()
+  const teendata = alldress.filter(item =>  item.category === 'Teen');
 
     return (
         <div>
@@ -25,11 +28,18 @@ const Teendata = () => {
         <h1 className="md:text-3xl mt-9 text-center font-medium border-red-700 md:w-[550px]  border-b-2 uppercase items-center justify-center">Teen Exclusive Collection</h1>
       </div>
       <div className="items-center justify-center grid lg:grid-cols-3 md:grid-cols-2 grid-rows-1 py-16 gap-8  ">
-   {teendata.map(data => (
+   {teendata.slice(0,size6).map(data => (
       <TeenCard key={data.id} data={data} dataid={data?._id}></TeenCard>
       
    ))}
  </div> 
+ {
+  size6<teendata.length && (
+    <div className="justify-center flex pt-12">
+    <button className="btn bg-gray-600 text-white" onClick={() => setSize6(teendata.length)}>Show All</button>
+  </div>
+  )
+ }
    </div>
     );
 };

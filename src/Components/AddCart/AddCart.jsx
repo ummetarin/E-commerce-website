@@ -68,12 +68,12 @@ const AddCart = () => {
   <input type="text" name="size" placeholder="Size" className="w-full border-0 rounded-md p-2  focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"   />
   </div>
   <select name="category" className=" border-0 rounded-md p-2 mb-4  focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" id="gender">
-    <option value="male">Men</option>
-    <option value="female">Women</option>
-    <option value="other">Teen</option>
-    <option value="female">Sport</option>
-    <option value="other">Child</option>
-    <option value="other">Acceceries</option>
+    <option value="Men">Men</option>
+    <option value="Women">Women</option>
+    <option value="Teen">Teen</option>
+    <option value="Sport">Sport</option>
+    <option value="Child">Child</option>
+    <option value="Accessories">Accessories</option>
   </select>
   
 
