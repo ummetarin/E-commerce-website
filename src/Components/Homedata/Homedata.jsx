@@ -3,6 +3,7 @@ import Categoric from "../Categorish/Categoric";
 import Banner from "./Banner";
 import Section2 from "./Section2";
 import Section3 from "./Section3";
+import Section4 from "./Section4";
 
 const Homedata = () => {
     return (
@@ -25,6 +26,9 @@ const Homedata = () => {
             </div>
             <div>
                <Section3></Section3> 
+            </div>
+            <div>
+                <Section4></Section4>
             </div>
            
         </div>
