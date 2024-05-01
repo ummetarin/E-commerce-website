@@ -11,6 +11,11 @@ const Myorders = () => {
        <h1 className=" py-5 text-orange-900 font-bold"  >Total price :$ {totalprice.toFixed(2)}
        </h1>
       </div>
+
+       <div className="flex justify-end mr-12 mb-3">
+        <button  className="text-xl text-white btn bg-orange-600 font-bold">Pay</button>
+       </div>
+
         <div className="overflow-x-auto">
         <table className="table">
           {/* head */}

@@ -1,5 +1,6 @@
 
 import Categoric from "../Categorish/Categoric";
+import BestReviews from "../Homepage/BestReviews";
 import Banner from "./Banner";
 import Section2 from "./Section2";
 import Section3 from "./Section3";
@@ -29,6 +30,9 @@ const Homedata = () => {
             </div>
             <div>
                 <Section4></Section4>
+            </div>
+            <div>
+                <BestReviews></BestReviews>
             </div>
            
         </div>
