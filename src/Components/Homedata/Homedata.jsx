@@ -3,7 +3,7 @@ import Categoric from "../Categorish/Categoric";
 import BestReviews from "../Homepage/BestReviews";
 import Banner from "./Banner";
 import Section2 from "./Section2";
-import Section3 from "./Section3";
+import Section3, { Carousel2 } from "./Section3";
 import Section4 from "./Section4";
 
 const Homedata = () => {
@@ -22,11 +22,11 @@ const Homedata = () => {
             <div>
                 
             </div>
-            <div className="justify-center px-12 py-4">
+            <div>
               <Section2></Section2>
             </div>
             <div>
-               <Section3></Section3> 
+               <Carousel2></Carousel2>
             </div>
             <div>
                 <Section4></Section4>

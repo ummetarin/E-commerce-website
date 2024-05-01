@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import { TbLogin2 } from "react-icons/tb";
 import { BiSolidCartAdd } from "react-icons/bi";
+import { CiLogin } from "react-icons/ci";
 import { useContext } from "react";
 import { FaCartArrowDown } from "react-icons/fa6";
 import { AuthContext } from "../Security/AuthProvider";
 import Swal from "sweetalert2";
 import useCarts from "../Hook/useCarts";
+import { CiLogout } from "react-icons/ci";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [cartdata]=useCarts()
@@ -24,7 +26,7 @@ const Navbar = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className="navbar fixed z-30 bg-opacity-90 bg-black text-white font-bold">
+    <div className="navbar fixed z-30 bg-opacity-80 bg-gray-900 text-white font-bold">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -102,11 +104,11 @@ const Navbar = () => {
 
         <div className="flex flex-row justify-center items-center md:w-[200px]">
           <img
-            className="md:h-24 h-12 "
+            className="md:h-16 h-12 "
             src="https://i.ibb.co/ypcs3mp/6dcd95192542125-Y3-Jvc-Cwy-NTU2-LDIw-MDAs-Mj-Ix-LDA-removebg-preview.png"
             alt=""
           />
-          <a className=" md:text-2xl text-xl text-yellow-600">Xport</a>
+          <a className=" md:text-3xl text-xl text-white">Xport</a>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -171,13 +173,12 @@ const Navbar = () => {
       <div className="navbar-end gap-1">
         {user ? (
           <>
-           <img className="h-12 w-12 rounded-full" src={user?.photoURL} alt="" />
-            <img
-              onClick={handlelogout}
-              className="h-12 w-12"
-              src="https://i.ibb.co/pLPR3DK/pngtree-vector-logout-icon-png-image-1022628-removebg-preview.png"
-              alt=""
-            ></img>
+         
+
+            <div onClick={handlelogout}>
+              <CiLogout className="h-8 w-8"></CiLogout>
+            </div>
+            <img className="h-8 w-8 rounded-full" src={user?.photoURL} alt="" />
            
           </>
         ) : (
@@ -185,8 +186,8 @@ const Navbar = () => {
             {" "}
             <Link to={"/log"}>
               {" "}
-              <a className="btn bg-yellow-700 text-white">
-                <TbLogin2 />
+              <a  >
+              <CiLogin className="h-8 w-8" />
               </a>
             </Link>
           </>

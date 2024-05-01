@@ -1,7 +1,7 @@
 
 const Categoric = () => {
     return (
-        <div className="flex flex-row justify-center gap-5">
+        <div className="grid grid-cols-3 justify-center items-center mx-auto lg:ml-36 md:ml-24 ml-0">
          <div className="card">
   <div className="card-inner">
     <div className="card-front">
@@ -54,6 +54,16 @@ const Categoric = () => {
     </div>
     <div className="card-back">
       <p>Accessories Fashion</p>
+    </div>
+  </div>
+</div>
+<div className="card">
+  <div className="card-inner">
+    <div className="card-front">
+       <img className="w-[200px] h-[140px]" src="https://i.ibb.co/xh9qjws/2448-734x380.jpg" alt="" />
+    </div>
+    <div className="card-back">
+      <p>Child Fashion</p>
     </div>
   </div>
 </div>
