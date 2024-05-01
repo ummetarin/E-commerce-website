@@ -5,16 +5,16 @@ import {
     useStripe,
     useElements,
   } from '@stripe/react-stripe-js';
+import CheakoutForm from './CheakoutForm';
 
-
-const stripePromise = loadStripe('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
+const stripePromise = loadStripe(import.meta.env.VITE_Payment_pk);
 const Payment = () => {
     return (
         <div>
             <h1>hi pay</h1>
 
             <Elements stripe={stripePromise}>
-
+                <CheakoutForm></CheakoutForm>
             </Elements>
 
           
