@@ -75,7 +75,8 @@ const handlereview = (e, id) => {
           star,
           date,
           time,
-          review
+          review,
+          photoURL:user?.photoURL
       }
     
       axios.post('http://localhost:5000/reviews',reviewdata)
@@ -165,8 +166,8 @@ const handlereview = (e, id) => {
        <div className="flex md:flex-row flex-col justify-center items-center pb-12 gap-36">
 
        <form onSubmit={(e) => handlereview(e, spdata?._id)} className="flex flex-col gap-4 font-bold">
-    <input type="text" placeholder="Name" name="name" className="bg-base-100 placeholder-black pl-3 text-black border-x-2 border-y-2 border-yellow-600 rounded-lg md:w-[400px] h-[44px]" />
-    <input type="email" placeholder="Email" name="email" className="bg-base-100 placeholder-black pl-3 text-black border-x-2 border-y-2 border-yellow-600 rounded-lg md:w-[400px] h-[44px]" />
+    <input type="text" placeholder="Name" name="name" defaultValue={user?.displayName} className="bg-base-100 placeholder-black pl-3 text-black border-x-2 border-y-2 border-yellow-600 rounded-lg md:w-[400px] h-[44px]" />
+    <input type="email" placeholder="Email" name="email" defaultValue={user?.email} className="bg-base-100 placeholder-black pl-3 text-black border-x-2 border-y-2 border-yellow-600 rounded-lg md:w-[400px] h-[44px]" />
     <select onChange={(e) => Setstar(e.target.value)} value={selstar} name="star" className="select select-bordered w-[400px] h-[44px]">
         <option value="1">1</option>
         <option value="2">2</option>
@@ -176,7 +177,7 @@ const handlereview = (e, id) => {
     </select>
 
 
-            <input type="text" placeholder="Review" name="review" className="bg-base-100 placeholder-black pl-3 text-black border-x-2 border-y-2 border-yellow-600 rounded-lg md:w-[400px] h-[130px]"></input>
+            <input type="text" placeholder="Review" name="review" className="bg-base-100 font-medium placeholder-black pl-3 text-black border-x-2 border-y-2 border-yellow-600 rounded-lg md:w-[400px] h-[130px]"></input>
 
             <button type="submit" className="btn bg-stone-800 text-white">Give Review</button>
          </form>

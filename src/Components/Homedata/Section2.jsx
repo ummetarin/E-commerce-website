@@ -20,7 +20,7 @@ const Section2 = () => {
 <>
 <div>
             <div className='relative w-full min-h-[300px]'>
-    <div className='absolute inset-0  bg-[url(https://i.ibb.co/f9J3DPN/white-elegant-texture-wallpaper-23-2148417584.jpg)] bg-cover bg-fixed bg-center'></div>
+    <div className='absolute inset-0  bg-[url(https://i.ibb.co/jvgC5WM/360-F-497701195-Tp-GXhc-S0-Edbf-HTTSDCSr-F1lv6-IYluwax.jpg)] bg-cover bg-fixed bg-center'></div>
     <div className='absolute inset-0 bg-black opacity-[0.7]'></div> {/* Overlay */}
     <Container>
     <div className='flex  flex-col gap-8 md:flex-row justify-center items-center relative z-10'>
