@@ -28,6 +28,7 @@ import AddCart from "./Components/AddCart/AddCart";
 import Allitems from "./Components/Allitems/Allitems";
 import AllUser from "./Components/AllOrder/AllUser";
 import Payment from "./Components/Payments/Payment";
+import Content from "./Components/Content/Content";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Homedata></Homedata>,
+      },{
+      path:"/con",
+      element:<Content></Content>,
+
       },
       {
         path: "/men",

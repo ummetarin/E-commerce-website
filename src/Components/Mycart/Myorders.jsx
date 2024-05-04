@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import useCarts from "../Hook/useCarts";
 import { MdDeleteForever } from "react-icons/md";
 const Myorders = () => {
@@ -13,7 +14,7 @@ const Myorders = () => {
       </div>
 
        <div className="flex justify-end mr-12 mb-3">
-        <button  className="text-xl text-white btn bg-orange-600 font-bold">Pay</button>
+      <Link  to={'/dash/pay'}>  <button disabled={!cartdata.length}  className="text-xl text-white btn bg-orange-600 font-bold">Pay</button></Link>
        </div>
 
         <div className="overflow-x-auto">

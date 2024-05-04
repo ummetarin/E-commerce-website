@@ -1,17 +1,19 @@
 import { CardElement, useElements,Elements, useStripe } from '@stripe/react-stripe-js';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import useAxios from '../Hook/useAxios';
 import useCarts from '../Hook/useCarts';
+import { AuthContext } from '../Security/AuthProvider';
 
 const CheakoutForm = () => {
 
     const [error,setError]=useState();
-
+    const{user}=useContext(AuthContext);
     const stripe = useStripe();
     const elements = useElements();
     const axiosSecure=useAxios();
     const[clientsecret,setClientsecret]=useState()
     const[cartdata,refetch]=useCarts();
+    const[transection,setTransection]=useState()
     const totalprice=cartdata.reduce((total,item)=>total+item.price,0)
     
 
@@ -47,6 +49,35 @@ const CheakoutForm = () => {
             console.log('[PaymentMethod]', paymentMethod);
             setError("");
           }
+
+          const {paymentIntent,error:confirmError}=await stripe.confirmCardPayment(clientsecret,{
+            payment_method:{
+              card:card,
+              billing_details:{
+                email: user?.email || "anonymous",
+                name:user?.displayName || "anonymous"
+              }
+            }
+          })
+
+          if(confirmError){
+            console.log("confirm eror");
+          }
+          else{
+            console.log(paymentIntent,"payment intents");
+            if(paymentIntent.status==="succeeded"){
+              console.log("transectiom id",paymentIntent.id);
+              setTransection(paymentIntent.id);
+
+              const payment={
+                price:totalprice,
+                email:user?.email,
+                name:user?.displayName,
+                date:new Date(),
+              }
+
+            }
+          }
         
     }
     return (
@@ -74,6 +105,9 @@ const CheakoutForm = () => {
       </button>
      </div>
      <p className='text-red-500'>{error}</p>
+     {
+      transection&& <p className='text-green-700  font-bold ml-1'>transection Id :{transection}</p>
+     }
     </form>
             
         </div>
