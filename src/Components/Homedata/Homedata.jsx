@@ -38,7 +38,7 @@ const Homedata = () => {
             </div>
             
             <div className="mb-12 mt-10">
-                    <h1 className="font-bold text-3xl text-center text-amber-950  ">Top Reviews About Our Cloths</h1>
+                    <h1 className="font-bold text-3xl text-center text-amber-950  ">Top Reviews</h1>
                     <p className="text-center text-gray-600 text-sm md:px-24 mt-3">These are just some examples, and the specific categories can vary depending on the nature of the e-commerce website and the types of products it offers. The goal is to create a logical structure that makes it easy for users to find what they're looking for.</p>
                 </div>
             <div>
